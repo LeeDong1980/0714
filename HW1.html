@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="./loadImage.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      img {
+        display: block;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      #app {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #app > .content {
+        position: relative;
+        width: 50%;
+        height: 50%;
+        /* background-color: coral; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #app > .content > .imgBox {
+        width: 60%;
+        height: auto;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #app > .content > .imgNum {
+        position: absolute;
+        bottom: 10%;
+      }
+      #app > .content > .triangle-left {
+        position: absolute;
+        top: 40%;
+        left: 0;
+
+        /* border-color: blue #ff0000 green purple; */
+        border-color: transparent #ff0000 transparent transparent;
+        border-style: solid solid solid solid;
+        border-width: 40px;
+
+        /* 設定 width、height 可更好理解原理 */
+        height: 0px;
+        width: 0px;
+      }
+      #app > .content > .triangle-right {
+        position: absolute;
+        top: 40%;
+        right: 0;
+        border-color: transparent transparent transparent #ff0000;
+        border-style: solid solid solid solid;
+        border-width: 40px;
+
+        /* 設定 width、height 可更好理解原理 */
+        height: 0px;
+        width: 0px;
+      }
+      #app > .content > .triangle-left:hover {
+        cursor: pointer;
+        border-color: transparent #ad0101 transparent transparent;
+      }
+      #app > .content > .triangle-right:hover {
+        cursor: pointer;
+        border-color: transparent transparent transparent #ad0101;
+      }
+      #app > .loading {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: #000000;
+      }
+      #app > .loading > h1 {
+        color: #ffffff;
+        font-size: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="content">
+        <div class="triangle-left"></div>
+        <div class="triangle-right"></div>
+        <div class="imgBox"></div>
+        <div class="imgNum"></div>
+      </div>
+      <div class="loading">
+        <h1>
+          正在載入中...
+        </h1>
+      </div>
+    </div>
+    <script src="./HW1.js"></script>
+  </body>
+</html>
